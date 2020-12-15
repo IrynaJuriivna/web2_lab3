@@ -9,7 +9,7 @@
                 var array2 = [];
                 for (var i = 0; i < array.length; i++) {
                     while (array[i].search(' ') != -1) {
-                        array[i] = array[i].replace("", '');
+                        array[i] = array[i].replace(" ", '');
                     }
                     if (array[i] != "") {
                         array2[i] = array[i]
