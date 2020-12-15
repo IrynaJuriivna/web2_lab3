@@ -7,14 +7,7 @@
             $scope.buttonClick = function () {
                 var array = $scope.food.split(',');
                 var array2 = [];
-                for (var i = 0; i < array.length; i++) {
-                    while (array[i].search(' ') != -1) {
-                        array[i] = array[i].replace(" ", '');
-                    }
-                    if (array[i] != "") {
-                        array2[i] = array[i]
-                    }
-                }
+
                 if ($scope.food == 0) {
                     $scope.result = "Будь ласка уведіть дані!";
                 }
@@ -22,7 +15,11 @@
                     $scope.result = "На здоров'я!";
                 }
                 else if (array2.length > 3) {
-                    $scope.result = "Це забагато!";
+                    var filtered = array.filter(function (el) {
+                        return el != null;
+                      });
+                      
+                    $scope.result = filtered;
                 }
             }
         });
