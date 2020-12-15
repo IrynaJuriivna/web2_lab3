@@ -7,7 +7,9 @@
             $scope.buttonClick = function () {
                 var array = $scope.food.split(',');
                 var array2 = [];
-
+                    var filtered = array.filter(function (el) {
+                        return el != null;
+                      });
                 if ($scope.food == 0) {
                     $scope.result = "Будь ласка уведіть дані!";
                 }
@@ -15,11 +17,9 @@
                     $scope.result = "На здоров'я!";
                 }
                 else if (array2.length > 3) {
-                    var filtered = array.filter(function (el) {
-                        return el != null;
-                      });
+
                       
-                    $scope.result = filtered;
+                    $scope.result = "Це забагато!!";
                 }
             }
         });
